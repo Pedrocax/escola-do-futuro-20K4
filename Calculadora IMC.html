@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <!--Calculadora de IMC
+    o código deve pedir:
+    - O nome do usuário e guardar em uma variável;
+    - O peso da pessoa em quilos e guardar em uma variável;
+    - A altura da pessoa em metros;
+    - Calcular o IMC com a fórmula: imc = peso/altura**2;
+    checar qual é o peso da pessoa e retornar o resultado;
+    imc <18.5 baixo peso;
+    imc >= 18.5 E imc< 24.9 peso ideal;
+    imc >= 24.9 E imc < 29.9 Sobrepeso;
+    imc >= 29.9 E imc < 34.9 Obesidade grau I;
+    imc >= 34.9 E imc < 40 Obesidade grau II;
+    imc>= 40 Obesidade grau III;
+    Após mostrar o resultado deve informar quanto o usuário deve:
+     - Ganhar em Kg se for menor que o IMC 18.5;
+     - Perder em Kg se for maior que o IMC 29.9;
+
+    Criar as variáveis:
+    - nome;
+    - peso;
+    - altura;
+    - situação;
+    - imc;
+ -->
+</head>
+<body>
+    <div id="tela">
+        <h1>Calculadora de IMC</h1>
+        <input type="text" id="nome" placeholder="Digite seu nome">
+        <br>
+        <label for="">Digite seu peso em Kg</label>
+        <input type="number" min="0" max="550" id="peso">
+        <br>
+        <label for="">Digite sua altura em metros</label>
+        <input type="number" min="0" max="3" id="altura">
+        <br>
+        <button onclick="verificar()">Calcular</button>
+        <hr>
+        <div id="retorno"></div>
+    </div>
+</body>
+<footer>
+    <script>
+        
+        let nome="", situacao="", peso=0, altura=0, imc=0;
+        //Variável nome guarda o nome;
+        //Variável peso guarda o peso;
+        //Variávle altura guarda a altura;
+        //Variável imc = peso/altura**2;
+        //Variável situação guarda o resultado da situação;
+        function verificar(){
+            nome=document.getElementById("nome").value;
+            //Pega o valor do input com ID nome e guarda na variável nome
+            peso=document.getElementById("peso").value;
+            //Pega o valor do input com ID peso e guarda na variável peso
+            altura=document.getElementById("altura").value;
+            //Pega o valor do input com ID altura e guarda na variável altura
+            //alert(nome);
+           //alert(peso);
+           //alert(altura);
+            imc = (peso/altura**2).toFixed(2)
+            //Realiza o cálculo peso dividido pela altura ao quadrado
+            //A função toFixed() reduz as casas decimais 
+            //alert(imc);
+            if(imc <18.5)(situacao="Baixo peso")
+            else if(imc>=18.5&&imc<24.9)(situacao="Peso ideal")
+            else if(imc>=24.9&&imc<29.9)(situacao="Sobrepeso")
+            else if(imc>=29.9&&imc<34.9)(situacao="Obesidade I")
+            else if(imc>=34.9&&imc<40)(situacao="Obesidade II")
+            else if(imc>40)(situacao="Obesidade III")
+            else(document.getElementById("retorno").innerHTML="Algo de errado não esta certo")
+        //alert(situacao)
+        document.getElementById("retorno").innerHTML=
+        "Ola, "+nome+" seu é "+imc+ " isso significa "+situacao
+        if(imc<18.5){ document.getElementById("retorno").innerHTML+=
+        "<br>você preciso ganhar"+((18.5-imc)*altura**2).toFixed(3)+"Kilos para atingir o seu peso idela"}
+        if(imc<24.9){ document.getElementById("retorno").innerHTML+=
+        "<br>você preciso perder"+((24.9-imc)*altura**2).toFixed(3)+"Kilos para atingir o seu peso idela"}
+        }
+      
+    </script>
+</footer>
+</html>

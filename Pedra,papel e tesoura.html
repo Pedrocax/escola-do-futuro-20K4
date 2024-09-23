@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra,papel e tisoura</title>
+    
+</head>
+<body>
+    <h1>Pedra, papel ou tesoura</h1>
+    1 para pedra, 2 para papel e 3 para tesoura
+    <input type="num"id="Num">
+    <button onclick="Jogar()">Jogar</button>
+    <div id="tela"></div>
+</body>
+<script>
+    let min=0, max=3,num=0;
+    function Jogar(){
+        //var possibilidades=max-min;
+        var num1=Math.floor(Math.random()*3);
+        num=document.getElementById("Num").value;
+        //alert(num);
+        //alert(num1);
+        if(num==1){
+            if(num1==3){
+                alert("Você escolheu pedra e ganhou para tesoura");
+                document.getElementById("tela").innerHTML="O computador=✌🏽<br> você=👊🏽"
+            }else if(num1==2){
+                alert("Você escolheu pedra e perdeu para papel");
+                 document.getElementById("tela").innerHTML="O computador=🤚🏽<br> você=👊🏽"
+            }else if(num1==1){
+                    alert("Você escolheu pedra e empatou com pedra");
+                     document.getElementById("tela").innerHTML="O computador=👊🏽<br> você=👊🏽"
+            }} 
+        if(num==2){
+                if(num1==1){
+                    alert("Você escolheu papel e ganhou para pedra");
+                     document.getElementById("tela").innerHTML="O computador=👊🏽<br> você=🤚🏽"
+                }else
+                if(num1==3){
+                    alert("Você escolheu papel e perdeu para tesoura");
+                     document.getElementById("tela").innerHTML="O computador=✌🏽<br> você=🤚🏽"
+                }
+                else if(num1==2){
+                        alert("Você escolheu papel e empatou com papel");
+                         document.getElementById("tela").innerHTML="O computador=🤚🏽<br> você=🤚🏽"
+                 }
+                }
+        if(num==3){
+                 if(num1==2){
+                       alert("Você escolheu tesoura e ganhou de papel");
+                        document.getElementById("tela").innerHTML="O computador=🤚🏽<br> você=✌🏽"
+
+                 }else if(num1==1){
+                      alert("Você escolheu tesoura e perdeu para pedra");
+                         document.getElementById("tela").innerHTML="O computador=👊🏽<br> você=✌🏽"
+            } 
+            else if(num1==3){
+                     alert("você escolheu tesoura e empatou com tesoura");
+                        document.getElementById("tela").innerHTML="O computador=✌🏽<br> você=✌🏽"
+            }} 
+        }
+
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações</title>
+    <style type="text/css">
+        div{
+            border: 1px solid rgb(78, 156, 190);
+            height: 200px;
+            width: 200px;
+        }
+        #a1{background-color: rgb(21, 21, 72);}
+        #a2{background-color: rgb(32, 76, 107);}
+        #a3{background-color: rgb(25, 97, 126);}
+        #a4{background-color: rgb(114, 165, 207);}
+
+
+        #a1:hover{border-radius: 100px;transition: 2s;}
+        #a2:hover{ transform: rotate(360deg); transition: 2s;}
+        #a3:hover{background-color: brown; transition: 2s;}
+        #a4:hover{
+             transform: translate(800px, 10px);
+             border-radius: 100px;
+             background-color: azure;
+             transition: 2s;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="a1"></div>
+    <div id="a2"></div>
+    <div id="a3"></div>
+    <div id="a4"></div>
+</body>
+</html>
